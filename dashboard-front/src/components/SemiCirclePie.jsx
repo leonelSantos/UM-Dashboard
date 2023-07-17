@@ -18,7 +18,7 @@ const SemiCircPie = () => {
         activeOuterRadiusOffset={8}
         borderWidth={1}
         borderColor={{
-            from: 'color',
+            from: 'colors',
             modifiers: [
                 [
                     'darker',
@@ -29,10 +29,10 @@ const SemiCircPie = () => {
         arcLinkLabelsSkipAngle={10}
         arcLinkLabelsTextColor="#f7f2f2"
         arcLinkLabelsThickness={2}
-        arcLinkLabelsColor={{ from: 'color' }}
+        arcLinkLabelsColor= "#050505"/*{{ from: 'colors' }}*/
         arcLabelsSkipAngle={10}
-        arcLabelsTextColor={{
-            from: 'color',
+        arcLabelsTextColor= {{
+            from: 'colors',
             modifiers: [
                 [
                     'darker',
@@ -63,49 +63,19 @@ const SemiCircPie = () => {
         fill={[
             {
                 match: {
-                    id: 'ruby'
+                    id: 'TAL'
                 },
                 id: 'dots'
             },
             {
                 match: {
-                    id: 'c'
+                    id: 'EPS'
                 },
                 id: 'dots'
             },
             {
                 match: {
-                    id: 'go'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'python'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'scala'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'lisp'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'elixir'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'javascript'
+                    id: 'KIN'
                 },
                 id: 'lines'
             }

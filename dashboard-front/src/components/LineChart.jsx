@@ -62,7 +62,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "transportation", // added
+        legend: isDashboard ? undefined : "Years", // added
         legendOffset: 36,
         legendPosition: "middle",
       }}
@@ -71,9 +71,9 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         tickValues: 5, // added
         tickSize: 3,
         tickPadding: 5,
-        tickRotation: 0,
-        legend: isDashboard ? undefined : "count", // added
-        legendOffset: -40,
+        tickRotation: 30,
+        legend: isDashboard ? undefined : "Amount", // added
+        legendOffset: -50,
         legendPosition: "middle",
       }}
       enableGridX={false}

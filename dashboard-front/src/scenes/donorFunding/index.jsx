@@ -5,50 +5,49 @@ import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import LineChart from "../../components/LineChart";
 import SemiCircPie from "../../components/SemiCirclePie";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { mockDataContacts } from "../../data/mockData";
+import { mockDataDonors } from "../../data/donorData";
 
 const DonorFunding = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+      
     const columns = [
         { field: "id", headerName: "ID", flex: 0.5 },
-        { field: "registrarId", headerName: "Registrar ID" },
+        { field: "year", headerName: "Year of Donation" },
         {
           field: "name",
-          headerName: "Name",
+          headerName: "Donors",
           flex: 1,
           cellClassName: "name-column--cell",
         },
         {
-          field: "age",
-          headerName: "Age",
-          type: "number",
-          headerAlign: "left",
-          align: "left",
+          field: "amount",
+          headerName: "Amount Donated",
+          flex: 1,
+            renderCell: (params) => (
+                <Typography color={colors.greenAccent[500]}>
+                {params.row.amount}
+                </Typography>
+            ),
         },
         {
-          field: "phone",
-          headerName: "Phone Number",
+          field: "gift_agreement",
+          headerName: "Gift Agreement",
           flex: 1,
         },
         {
-          field: "email",
-          headerName: "Email",
+          field: "amount_spent",
+          headerName: "Amount Spent",
           flex: 1,
+            renderCell: (params) => (
+                <Typography color={colors.greenAccent[500]}>
+                {params.row.amount_spent}
+                </Typography>
+            ),
         },
         {
-          field: "address",
-          headerName: "Address",
-          flex: 1,
-        },
-        {
-          field: "city",
-          headerName: "City",
-          flex: 1,
-        },
-        {
-          field: "zipCode",
-          headerName: "Zip Code",
+          field: "deadline",
+          headerName: "Deadline",
           flex: 1,
         },
       ];
@@ -163,8 +162,8 @@ const DonorFunding = () => {
                         },
                         }}
                     >
-                        <DataGrid
-                        rows={mockDataContacts}
+                        <DataGrid checkboxSelection
+                        rows={mockDataDonors}
                         columns={columns}
                         components={{ Toolbar: GridToolbar }}
                         />
