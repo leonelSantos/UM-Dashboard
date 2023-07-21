@@ -16,6 +16,7 @@ import FAQ from "./scenes/faq";
 import Geography from "./scenes/geography";
 import Calendar from "./scenes/calendar";
 import DonorFunding from "./scenes/donorFunding";
+import Grants from "./scenes/grants";
 
 function App() {
     const [theme, colorMode] = useMode();
@@ -33,6 +34,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/donorFunding" element={<DonorFunding />} />
+              <Route path="/grants" element={<Grants />} />
               <Route path="/form" element={<Form />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/calendar" element={<Calendar />} />

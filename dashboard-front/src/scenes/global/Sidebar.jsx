@@ -142,6 +142,15 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+
+            <Item
+              title="Grants"
+              to="/grants"
+              icon={<AccountBalanceIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
             <Item
               title="Manage Team"
               to="/team"
