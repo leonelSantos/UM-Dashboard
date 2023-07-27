@@ -32,11 +32,14 @@ export const tokens = (mode) => ({
           200: "#b7ebde",
           300: "#94e2cd",
           400: "#70d8bd",
-          500: "#4cceac",
+          500: "#41AD49",
           600: "#3da58a",
           700: "#2e7c67",
           800: "#1e5245",
           900: "#0f2922",
+        },
+        orangeAccent: {
+          100:"#F6B031",
         },
         redAccent: {
           100: "#f8dcdb",
@@ -84,16 +87,20 @@ export const tokens = (mode) => ({
           800: "#a1a4ab",
           900: "#d0d1d5",
         },
+        /*4cceac*/
         greenAccent: {
           100: "#0f2922",
           200: "#1e5245",
           300: "#2e7c67",
           400: "#3da58a",
-          500: "#4cceac",
+          500: "#41AD49",
           600: "#70d8bd",
           700: "#94e2cd",
           800: "#b7ebde",
           900: "#dbf5ee",
+        },
+        orangeAccent: {
+          100:"#F6B031",
         },
         redAccent: {
           100: "#2c100f",
@@ -143,6 +150,9 @@ export const themeSettings = (mode) => {
             background: {
               default: colors.primary[500],
             },
+            icons: {
+              default: colors.orangeAccent[100],
+            },
           }
         : {
             // palette values for light mode
@@ -159,6 +169,9 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: "#fcfcfc",
+            },
+            icons: {
+              default: colors.orangeAccent[100],
             },
           }),
     },

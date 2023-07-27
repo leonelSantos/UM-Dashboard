@@ -6,6 +6,10 @@ import LineChart from "../../components/LineChart";
 import SemiCircPie from "../../components/SemiCirclePie";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockGrantsData } from "../../data/grantsData";
+import StatBox from "../../components/StatBox";
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import RedeemIcon from '@mui/icons-material/Redeem';
 
 const Grants = () => {
     const theme = useTheme();
@@ -14,12 +18,6 @@ const Grants = () => {
     const columns = [
         { field: "id", headerName: "ID", flex: 0 },
         { field: "donation_year", headerName: "Year of Donation" },
-        {
-            field: "pi_name",
-            headerName: "PI Name",
-            flex: 0,
-            cellClassName: "name-column--cell",
-        },
         {
             field: "pi_name",
             headerName: "PI Name",
@@ -86,7 +84,7 @@ const Grants = () => {
           headerName: "Amount Used",
           flex: 0,
             renderCell: (params) => (
-                <Typography color={colors.greenAccent[500]}>
+                <Typography color={colors.redAccent[500]}>
                 ${params.row.amount_spent}
                 </Typography>
             ),
@@ -110,7 +108,65 @@ const Grants = () => {
             gridAutoRows="140px"
             gap="20px"
             >
-                {/* ROW 1 */}
+                {/*Row 1*/}
+                <Box
+                gridColumn="span 5"
+                backgroundColor={colors.primary[400]}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                >
+                    <StatBox
+                    title="$5,361,450.00"
+                    subtitle="Total Donated 2023"
+                    progress="0.75"
+                    increase="54% Donation Goal"
+                    icon={
+                    <RedeemIcon
+                        sx={{ color: colors.orangeAccent[100], fontSize: "26px" }}
+                    />
+                    }
+                    />
+                </Box>
+                <Box
+                gridColumn="span 5"
+                backgroundColor={colors.primary[400]}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                >
+                <StatBox
+                    title="$1,431,225.00"
+                    subtitle="Amount Still Available"
+                    progress="0.50"
+                    increase="21% Left"
+                    icon={
+                    <AccountBalanceWalletIcon
+                        sx={{ color: colors.orangeAccent[100], fontSize: "26px" }}
+                    />
+                    }
+                />
+                </Box>
+                <Box
+                gridColumn="span 5"
+                backgroundColor={colors.primary[400]}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                >
+                <StatBox
+                    title="357"
+                    subtitle="Total Donors 2023"
+                    progress="0.30"
+                    increase="+5%"
+                    icon={
+                    <PersonAddIcon
+                        sx={{ color: colors.orangeAccent[100], fontSize: "26px" }}
+                    />
+                    }
+                />
+                </Box>
+                {/* ROW 2 */}
                 <Box
                 gridColumn="span 8"
                 gridRow="span 2"
@@ -162,8 +218,21 @@ const Grants = () => {
                 <Box
                 gridColumn="span 7"
                 gridRow="span 2"
-                backgroundColor={colors.primary[400]}
-                >
+                backgroundColor={colors.primary[400]}>
+                <Box
+                mt="5px"
+                p="0 30px"
+                display="flex "
+                justifyContent="space-between"
+                alignItems="center">
+                    <Typography
+                    variant="h5"
+                    fontWeight="600"
+                    color={colors.grey[100]}
+                    >
+                                Donations by Department
+                    </Typography>
+                </Box>
                     <SemiCircPie/>
                 </Box>
 

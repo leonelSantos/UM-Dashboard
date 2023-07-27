@@ -9,7 +9,7 @@ const SemiCircPie = () => {
   return (
     <ResponsivePie
         data={data}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        margin={{ top: 40, right: 80, bottom: 60, left: 80 }}
         startAngle={-90}
         endAngle={90}
         innerRadius={0.5}
@@ -27,9 +27,9 @@ const SemiCircPie = () => {
             ]
         }}
         arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor="#f7f2f2"
+        arcLinkLabelsTextColor={colors.grey[100]}
         arcLinkLabelsThickness={2}
-        arcLinkLabelsColor= "#050505"/*{{ from: 'colors' }}*/
+        arcLinkLabelsColor= {colors.grey[100]}
         arcLabelsSkipAngle={10}
         arcLabelsTextColor= {{
             from: 'colors',
@@ -85,11 +85,11 @@ const SemiCircPie = () => {
                 anchor: 'bottom',
                 direction: 'row',
                 justify: false,
-                translateX: 0,
-                translateY: 56,
+                translateX: 40,
+                translateY: 30,
                 itemsSpacing: 0,
                 itemWidth: 100,
-                itemHeight: 18,
+                itemHeight: 30,
                 itemTextColor: '#999',
                 itemDirection: 'left-to-right',
                 itemOpacity: 1,
@@ -99,7 +99,7 @@ const SemiCircPie = () => {
                     {
                         on: 'hover',
                         style: {
-                            itemTextColor: '#000'
+                            itemTextColor: '#999'
                         }
                     }
                 ]
