@@ -183,7 +183,7 @@ const Grants = () => {
                         {/* Line Graph Text*/}
                         <Box>
                             <Typography
-                            variant="h5"
+                            variant="h3"
                             fontWeight="600"
                             color={colors.grey[100]}
                             >
@@ -226,7 +226,7 @@ const Grants = () => {
                 justifyContent="space-between"
                 alignItems="center">
                     <Typography
-                    variant="h5"
+                    variant="h3"
                     fontWeight="600"
                     color={colors.grey[100]}
                     >

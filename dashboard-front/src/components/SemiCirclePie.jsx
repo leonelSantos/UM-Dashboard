@@ -9,7 +9,19 @@ const SemiCircPie = () => {
   return (
     <ResponsivePie
         data={data}
-        margin={{ top: 40, right: 80, bottom: 60, left: 80 }}
+        theme={{
+            tooltip: {
+                container: {
+                    background: '#999'
+                },
+            },
+            legends: {
+                text: {
+                  fill: colors.grey[100],
+                },
+              },
+        }}
+        margin={{ top: 20, right: 80, bottom: 80, left: 80 }}
         startAngle={-90}
         endAngle={90}
         innerRadius={0.5}
@@ -82,24 +94,24 @@ const SemiCircPie = () => {
         ]}
         legends={[
             {
-                anchor: 'bottom',
-                direction: 'row',
+                anchor: 'bottom-right',
+                direction: 'column',
                 justify: false,
-                translateX: 40,
-                translateY: 30,
+                translateX: 100,
+                translateY: 0,
                 itemsSpacing: 0,
                 itemWidth: 100,
                 itemHeight: 30,
-                itemTextColor: '#999',
                 itemDirection: 'left-to-right',
-                itemOpacity: 1,
+                itemOpacity: 0.75,
                 symbolSize: 18,
                 symbolShape: 'circle',
                 effects: [
                     {
-                        on: 'hover',
+                        on: "hover",
                         style: {
-                            itemTextColor: '#999'
+                            itemBackground: "rgba(0, 0, 0, .03)",
+                            itemOpacity: 1,
                         }
                     }
                 ]
