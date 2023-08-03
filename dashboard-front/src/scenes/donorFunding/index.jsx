@@ -6,6 +6,7 @@ import LineChart from "../../components/LineChart";
 import SemiCircPie from "../../components/SemiCirclePie";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockDataDonors } from "../../data/donorData";
+import NestedPie from "../../components/NestedPie";
 
 const DonorFunding = () => {
     const theme = useTheme();
@@ -116,9 +117,44 @@ const DonorFunding = () => {
                 <Box
                 gridColumn="span 7"
                 gridRow="span 2"
-                backgroundColor={colors.primary[400]}
-                >
+                backgroundColor={colors.primary[400]}>
+                <Box
+                mt="5px"
+                p="0 30px"
+                display="flex "
+                justifyContent="space-between"
+                alignItems="center">
+                    <Typography
+                    variant="h3"
+                    fontWeight="600"
+                    color={colors.grey[100]}
+                    >
+                                Donations by Department
+                    </Typography>
+                </Box>
                     <SemiCircPie/>
+                </Box>
+
+                {/* Nested Pie */}
+                <Box
+                gridColumn="span 7"
+                gridRow="span 4"
+                backgroundColor={colors.primary[400]}>
+                <Box
+                mt="5px"
+                p="0 30px"
+                display="flex "
+                justifyContent="space-between"
+                alignItems="center">
+                    <Typography
+                    variant="h3"
+                    fontWeight="600"
+                    color={colors.grey[100]}
+                    >
+                                Nested Pie
+                    </Typography>
+                </Box>
+                    <NestedPie/>
                 </Box>
 
                 {/* Data Grid */}

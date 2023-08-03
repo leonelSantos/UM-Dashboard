@@ -9,9 +9,9 @@ import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
 import GeographyChart from "../../components/GeographyChart";
-import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import DonorsBar from "../../components/DonorsBar";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -256,7 +256,7 @@ const Dashboard = () => {
             Sales Quantity
           </Typography>
           <Box height="250px" mt="-20px">
-            <BarChart isDashboard={true} />
+            <DonorsBar isDashboard={true} />
           </Box>
         </Box>
         <Box

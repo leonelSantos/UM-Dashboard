@@ -12,9 +12,9 @@ const SemiCircPie = () => {
         theme={{
             tooltip: {
                 container: {
-                    background: '#999'
+                  color: colors.primary[500],
                 },
-            },
+              },
             legends: {
                 text: {
                   fill: colors.grey[100],
@@ -27,6 +27,7 @@ const SemiCircPie = () => {
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
+        colors={{ scheme: "accent" }}
         activeOuterRadiusOffset={8}
         borderWidth={1}
         borderColor={{

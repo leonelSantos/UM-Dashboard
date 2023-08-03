@@ -3,7 +3,7 @@ import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../Themes";
 import { mockBarData as data } from "../data/mockData";
 
-const BarChart = ({ isDashboard = false }) => {
+const DonorsBar = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -38,14 +38,19 @@ const BarChart = ({ isDashboard = false }) => {
             fill: colors.grey[100],
           },
         },
+        tooltip: {
+            container: {
+              color: colors.primary[500],
+            },
+          },
       }}
-      keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
-      indexBy="country"
-      margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+      keys={["KIN", "TAL", "EPS"]}
+      indexBy="year"
+      margin={{ top: 20, right: 130, bottom: 90, left: 60 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
-      colors={{ scheme: "nivo" }}
+      colors={{ scheme: "accent" }}
       defs={[
         {
           id: "dots",
@@ -70,13 +75,14 @@ const BarChart = ({ isDashboard = false }) => {
         from: "color",
         modifiers: [["darker", "1.6"]],
       }}
+      
       axisTop={null}
       axisRight={null}
       axisBottom={{
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "country", // changed
+        legend: isDashboard ? undefined : "Years", // changed
         legendPosition: "middle",
         legendOffset: 32,
       }}
@@ -84,7 +90,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "food", // changed
+        legend: isDashboard ? undefined : "Grants", // changed
         legendPosition: "middle",
         legendOffset: -40,
       }}
@@ -127,4 +133,4 @@ const BarChart = ({ isDashboard = false }) => {
   );
 };
 
-export default BarChart;
+export default DonorsBar;

@@ -10,6 +10,7 @@ import StatBox from "../../components/StatBox";
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import RedeemIcon from '@mui/icons-material/Redeem';
+import DonorsBar from "../../components/DonorsBar";
 
 const Grants = () => {
     const theme = useTheme();
@@ -174,7 +175,7 @@ const Grants = () => {
                 >
                     {/* Line Graph */}
                     <Box
-                    mt="25px"
+                    mt="10px"
                     p="0 30px"
                     display="flex "
                     justifyContent="space-between"
@@ -220,7 +221,7 @@ const Grants = () => {
                 gridRow="span 2"
                 backgroundColor={colors.primary[400]}>
                 <Box
-                mt="5px"
+                mt="10px"
                 p="0 30px"
                 display="flex "
                 justifyContent="space-between"
@@ -230,10 +231,31 @@ const Grants = () => {
                     fontWeight="600"
                     color={colors.grey[100]}
                     >
-                                Donations by Department
+                                Grants by Department
                     </Typography>
                 </Box>
                     <SemiCircPie/>
+                </Box>
+
+                <Box
+                gridColumn="span 8"
+                gridRow="span 3"
+                backgroundColor={colors.primary[400]}>
+                <Box
+                mt="10px"
+                p="0 30px"
+                display="flex "
+                justifyContent="space-between"
+                alignItems="center">
+                    <Typography
+                    variant="h3"
+                    fontWeight="600"
+                    color={colors.grey[100]}
+                    >
+                                Grants Over the Years
+                    </Typography>
+                </Box>
+                    <DonorsBar/>
                 </Box>
 
                 {/* Data Grid */}
