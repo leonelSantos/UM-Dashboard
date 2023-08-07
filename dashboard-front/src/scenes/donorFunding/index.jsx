@@ -137,24 +137,12 @@ const DonorFunding = () => {
 
                 {/* Nested Pie */}
                 <Box
-                gridColumn="span 7"
+                gridColumn="span 8"
                 gridRow="span 4"
                 backgroundColor={colors.primary[400]}>
-                <Box
-                mt="5px"
-                p="0 30px"
-                display="flex "
-                justifyContent="space-between"
-                alignItems="center">
-                    <Typography
-                    variant="h3"
-                    fontWeight="600"
-                    color={colors.grey[100]}
-                    >
-                                Nested Pie
-                    </Typography>
-                </Box>
-                    <NestedPie/>
+                
+                <NestedPie/>
+                    
                 </Box>
 
                 {/* Data Grid */}
