@@ -4,7 +4,7 @@ import { tokens } from "../Themes";
 import { mockBarData as data } from "../data/mockData";
 
 
-const DonorsBar = ({ isDashboard = false }) => {
+const GroupedBar = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -49,6 +49,7 @@ const DonorsBar = ({ isDashboard = false }) => {
       indexBy="year"
       margin={{ top: 20, right: 130, bottom: 90, left: 60 }}
       padding={0.3}
+      groupMode="grouped"
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
       colors={{ scheme: "accent" }}
@@ -134,4 +135,4 @@ const DonorsBar = ({ isDashboard = false }) => {
   );
 };
 
-export default DonorsBar;
+export default GroupedBar;

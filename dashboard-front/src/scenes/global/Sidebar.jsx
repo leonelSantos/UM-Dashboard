@@ -92,9 +92,9 @@ const Sidebar = () => {
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
-                  width="100px"
-                  height="100px"
-                  src={`../../assets/user.png`}
+                  width="150px"
+                  height="200px"
+                  src={`../../assets/kohn-wood01.jpg`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -105,10 +105,10 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Leo Santos
+                  Laura Kohn-Wood
                 </Typography>
                 <Typography variant="h5" color={colors.primary[100]}>
-                  Technical Analyst
+                  Dean of SEHD
                 </Typography>
               </Box>
             </Box>

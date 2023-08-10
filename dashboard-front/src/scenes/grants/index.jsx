@@ -11,6 +11,8 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import RedeemIcon from '@mui/icons-material/Redeem';
 import DonorsBar from "../../components/DonorsBar";
+import Gauge from "../../components/Gauge";
+import GroupedBar from "../../components/GroupedBar";
 
 const Grants = () => {
     const theme = useTheme();
@@ -215,7 +217,14 @@ const Grants = () => {
                     </Box>
                 </Box>
 
-                {/* Semi Circle Pie Chart */}
+                {/* Gauge Chart */}
+                <Box
+                gridColumn="span 7"
+                gridRow="span 2"
+                backgroundColor={colors.primary[400]}>
+                    <Gauge/>
+                </Box>
+                {/* Semi Circle Pie Chart 
                 <Box
                 gridColumn="span 7"
                 gridRow="span 2"
@@ -235,10 +244,11 @@ const Grants = () => {
                     </Typography>
                 </Box>
                     <SemiCircPie/>
-                </Box>
+                </Box>*/}
 
+                {/*Donors Bar Chart */}
                 <Box
-                gridColumn="span 8"
+                gridColumn="span 15"
                 gridRow="span 3"
                 backgroundColor={colors.primary[400]}>
                 <Box
@@ -255,7 +265,7 @@ const Grants = () => {
                                 Grants Over the Years
                     </Typography>
                 </Box>
-                    <DonorsBar/>
+                    <GroupedBar/>
                 </Box>
 
                 {/* Data Grid */}

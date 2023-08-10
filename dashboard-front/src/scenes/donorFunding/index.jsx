@@ -3,10 +3,11 @@ import { tokens } from "../../Themes";
 import Header from "../../components/Header";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import LineChart from "../../components/LineChart";
-import SemiCircPie from "../../components/SemiCirclePie";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockDataDonors } from "../../data/donorData";
-import NestedPie from "../../components/NestedPie";
+import Gauge from "../../components/Gauge";
+import DonorsBar from "../../components/DonorsBar";
+import Sunburst from "../../components/Sunburst";
 
 const DonorFunding = () => {
     const theme = useTheme();
@@ -113,14 +114,39 @@ const DonorFunding = () => {
                     </Box>
                 </Box>
 
-                {/* Semi Circle Pie Chart */}
+                
+                {/* Gauge Chart */}
                 <Box
                 gridColumn="span 7"
                 gridRow="span 2"
-                backgroundColor={colors.primary[400]}>
+                backgroundColor={colors.primary[400]}
+                display={'flex'}
+                >
+                    <Gauge/>
+                </Box>
+
+                {/* Nested Pie */}
                 <Box
-                mt="5px"
-                p="0 30px"
+                gridColumn="span 8"
+                gridRow="span 4"
+                backgroundColor={colors.primary[400]}
+                display={'flex'}
+                >
+                    {/*<TestPie
+                    outerPercentage={outerPercentage}/>*/}
+                    {/*  */}
+                    <Sunburst/>
+                </Box>
+
+                {/* Grouped Bar Chart */}
+                <Box
+                gridColumn="span 7"
+                gridRow="span 4"
+                backgroundColor={colors.primary[400]}
+                >
+                    <Box
+                mt="2px"
+                p="0 10px"
                 display="flex "
                 justifyContent="space-between"
                 alignItems="center">
@@ -132,17 +158,7 @@ const DonorFunding = () => {
                                 Donations by Department
                     </Typography>
                 </Box>
-                    <SemiCircPie/>
-                </Box>
-
-                {/* Nested Pie */}
-                <Box
-                gridColumn="span 8"
-                gridRow="span 4"
-                backgroundColor={colors.primary[400]}>
-                
-                <NestedPie/>
-                    
+                    <DonorsBar/>  
                 </Box>
 
                 {/* Data Grid */}
