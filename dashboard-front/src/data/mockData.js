@@ -407,7 +407,7 @@ export const mockPieData = [
 export const mockLineData = [
   {
     id: "TAL",
-    color: tokens("dark").greenAccent[500],
+    color: "#a6c5e8",
     data: [
       {
         x: "2012",
@@ -461,7 +461,7 @@ export const mockLineData = [
   },
   {
     id: "EPS",
-    color: tokens("dark").blueAccent[300],
+    color: tokens("dark").greenAccent[500],
     data: [
       {
         x: "2012",
@@ -515,7 +515,7 @@ export const mockLineData = [
   },
   {
     id: "KIN",
-    color: tokens("dark").redAccent[200],
+    color: "#ef8839",
     data: [
       {
         x: "2012",

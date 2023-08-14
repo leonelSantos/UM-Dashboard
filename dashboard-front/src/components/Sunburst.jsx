@@ -4,7 +4,6 @@ import Plot from 'react-plotly.js';
 //import { useTheme } from "@mui/material";
 //const theme = useTheme();
 //const colors = tokens(theme.palette.mode);
-//"KIN","KIN", "EPS", "EPS", "TAL", "TAL"
 
 
 

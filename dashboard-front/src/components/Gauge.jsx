@@ -14,17 +14,17 @@ class Gauge extends Component {
           mode: 'number+gauge+delta',
           title: {text: "Donation Goals"},
           value: 150, // Your indicator value
-          delta: { reference: 120, increasing: { color: "RebeccaPurple" } },
+          delta: { reference: 120, increasing: { color: "#a6c5e8" } },
           position: 'center',
           gauge: {
             axis: { range: [null, 200] },
             steps: [
               { range: [0, 150], color: 'lightgray' },
-              { range: [150, 200], color: 'gray' }
+              { range: [150, 200], color: 'lightgray' }
             ],
             threshold: {
-              line: { color: 'red', width: 4 },
-              thickness: 0.75,
+              line: { color: '#ef8839', width: 4 },
+              thickness: 1.0,
               value: 200 // Your threshold value
             }
           },

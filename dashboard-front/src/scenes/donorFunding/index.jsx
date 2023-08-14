@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Pagination, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../Themes";
 import Header from "../../components/Header";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
@@ -6,8 +6,9 @@ import LineChart from "../../components/LineChart";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockDataDonors } from "../../data/donorData";
 import Gauge from "../../components/Gauge";
-import DonorsBar from "../../components/DonorsBar";
+//import DonorsBar from "../../components/DonorsBar";
 import Sunburst from "../../components/Sunburst";
+import StackedBar from "../../components/StackedBar";
 
 const DonorFunding = () => {
     const theme = useTheme();
@@ -125,40 +126,48 @@ const DonorFunding = () => {
                     <Gauge/>
                 </Box>
 
-                {/* Nested Pie */}
+                {/* Sunburst */}
                 <Box
-                gridColumn="span 8"
+                gridColumn="span 6"
                 gridRow="span 4"
                 backgroundColor={colors.primary[400]}
                 display={'flex'}
                 >
-                    {/*<TestPie
-                    outerPercentage={outerPercentage}/>*/}
-                    {/*  */}
                     <Sunburst/>
                 </Box>
 
                 {/* Grouped Bar Chart */}
                 <Box
-                gridColumn="span 7"
+                gridColumn="span 9"
                 gridRow="span 4"
                 backgroundColor={colors.primary[400]}
                 >
                     <Box
-                mt="2px"
-                p="0 10px"
-                display="flex "
-                justifyContent="space-between"
-                alignItems="center">
-                    <Typography
-                    variant="h3"
-                    fontWeight="600"
-                    color={colors.grey[100]}
-                    >
+                    mt="2px"
+                    p="0 10px"
+                    display="flex "
+                    justifyContent="space-between"
+                    alignItems="center">
+                        <Typography
+                        variant="h3"
+                        fontWeight="600"
+                        color={colors.grey[100]}
+                        >
                                 Donations by Department
-                    </Typography>
+                        </Typography>
                 </Box>
-                    <DonorsBar/>  
+                    {/*<DonorsBar/>*/} 
+                    <StackedBar/>
+                </Box>
+
+                <Box 
+                gridColumn="span 15"
+                gridRow="span 1"
+                justifyContent="center" 
+                alignItems= "center" 
+                display="flex"
+                sx={{margin: "40px 0px"}}>
+                    <Pagination count={2} variant="outlined" color="secondary" size="large"/>
                 </Box>
 
                 {/* Data Grid */}
