@@ -1,81 +1,128 @@
-import { Box, IconButton, Pagination, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../Themes";
-import Header from "../../components/Header";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import LineChart from "../../components/LineChart";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { mockDataDonors } from "../../data/donorData";
-import Gauge from "../../components/Gauge";
-//import DonorsBar from "../../components/DonorsBar";
-import Sunburst from "../../components/Sunburst";
-import StackedBar from "../../components/StackedBar";
-import DashTabs from "../../components/Tabs";
+import * as React from 'react';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import { tokens } from "../Themes";
+import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import DatasetIcon from '@mui/icons-material/Dataset';
+import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views-react-18-fix';
+import AppBar from '@mui/material/AppBar';
 
-const DonorFunding = () => {
+import { Box, IconButton, Pagination, Typography, useTheme } from "@mui/material";
+import Header from "../components/Header";
+import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
+import LineChart from "../components/LineChart";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { mockDataDonors } from "../data/donorData";
+import Gauge from "../components/Gauge";
+import Sunburst from "../components/Sunburst";
+import StackedBar from "../components/StackedBar";
+
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+  
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`full-width-tabpanel-${index}`}
+        aria-labelledby={`full-width-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box sx={{ p: 3 }}>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
+      </div>
+    );
+  }
+  
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+  };
+  
+  function a11yProps(index) {
+    return {
+      id: `full-width-tab-${index}`,
+      'aria-controls': `full-width-tabpanel-${index}`,
+    };
+  }
+
+const DashTabs = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    const [value, setValue] = React.useState(0);
+    const handleChange = (event, newValue) => {
+    setValue(newValue);
+    const handleChangeIndex = (index) => {
+        setValue(index);
+      };      
+};
+
+const columns = [
+    { field: "id", headerName: "ID", flex: 0.5 },
+    { field: "year", headerName: "Year of Donation" },
+    {
+      field: "name",
+      headerName: "Donors",
+      flex: 1,
+      cellClassName: "name-column--cell",
+    },
+    {
+      field: "amount",
+      headerName: "Amount Donated",
+      flex: 1,
+        renderCell: (params) => (
+            <Typography color={colors.greenAccent[500]}>
+            {params.row.amount}
+            </Typography>
+        ),
+    },
+    {
+      field: "gift_agreement",
+      headerName: "Gift Agreement",
+      flex: 1,
+    },
+    {
+      field: "amount_spent",
+      headerName: "Amount Spent",
+      flex: 1,
+        renderCell: (params) => (
+            <Typography color={colors.greenAccent[500]}>
+            {params.row.amount_spent}
+            </Typography>
+        ),
+    },
+    {
+      field: "deadline",
+      headerName: "Deadline",
+      flex: 1,
+    },
+  ];
+return (
+    <Box gridColumn="span 16"
+    gridRow="span 1" sx={{ width: '100%', bgcolor: colors.primary[300] }}>
+        <AppBar position="static">
+      <Tabs 
+      value={value} 
+      onChange={handleChange} 
+      centered
+      textColor="secondary"
+      indicatorColor="secondary"
+      aria-label="full width tabs example"
+      >
+        <Tab icon={<QueryStatsIcon/>} iconPosition="start" label="Analysis" {...a11yProps(0)}/>
+        <Tab icon={<DatasetIcon/>} iconPosition="start" label="Data" {...a11yProps(1)}/>
+      </Tabs>
+      </AppBar>
+
       
-    const columns = [
-        { field: "id", headerName: "ID", flex: 0.5 },
-        { field: "year", headerName: "Year of Donation" },
-        {
-          field: "name",
-          headerName: "Donors",
-          flex: 1,
-          cellClassName: "name-column--cell",
-        },
-        {
-          field: "amount",
-          headerName: "Amount Donated",
-          flex: 1,
-            renderCell: (params) => (
-                <Typography color={colors.greenAccent[500]}>
-                {params.row.amount}
-                </Typography>
-            ),
-        },
-        {
-          field: "gift_agreement",
-          headerName: "Gift Agreement",
-          flex: 1,
-        },
-        {
-          field: "amount_spent",
-          headerName: "Amount Spent",
-          flex: 1,
-            renderCell: (params) => (
-                <Typography color={colors.greenAccent[500]}>
-                {params.row.amount_spent}
-                </Typography>
-            ),
-        },
-        {
-          field: "deadline",
-          headerName: "Deadline",
-          flex: 1,
-        },
-      ];
-    return(
-        <Box m="20px">
-            <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Header title="DONOR FUNDING" subtitle="Welcome to the Donor Funding page" />
-            </Box>
-
-            
-
-            {/* GRID & CHARTS */}
+        <TabPanel value={value} index={0} dir={theme.direction}>
+            {/* ROW 1 */}
             <Box
-            display="grid"
-            gridTemplateColumns="repeat(15, 1fr)"
-            gridAutoRows="140px"
-            gap="20px"
-            >
-
-                {/* Tabs */}
-                <DashTabs/>
-
-                {/* ROW 1 */}
-                <Box
                 gridColumn="span 8"
                 gridRow="span 2"
                 backgroundColor={colors.primary[400]}
@@ -108,11 +155,11 @@ const DonorFunding = () => {
                         </Box>
                         {/* Line Graph Button*/}
                         <Box>
-                            <IconButton>
+                            {/*<IconButton>*/}
                                 <DownloadOutlinedIcon
                                 sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
                                 />
-                            </IconButton>
+                            {/*</IconButton>*/}
                         </Box>
                     </Box>
 
@@ -176,9 +223,11 @@ const DonorFunding = () => {
                 sx={{margin: "40px 0px"}}>
                     <Pagination count={2} variant="outlined" color="secondary" size="large"/>
                 </Box>
+        </TabPanel>
 
-                {/* Data Grid */}
-                <Box 
+        <TabPanel value={value} index={1} dir={theme.direction}>
+          {/* Data Grid */}
+          <Box 
                 gridColumn="span 15"
                 gridRow="span 2"
                 m="20px">
@@ -225,9 +274,9 @@ const DonorFunding = () => {
                         />
                     </Box>
                 </Box>
-            </Box>           
-        </Box>
-    );
+        </TabPanel>
+    </Box>
+  );
 };
 
-export default DonorFunding;
+export default DashTabs;
