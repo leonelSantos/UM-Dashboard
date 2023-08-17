@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
 import Plot from 'react-plotly.js';
-//import { tokens } from "../Themes";
-//import { useTheme } from "@mui/material";
-//const theme = useTheme();
-//const colors = tokens(theme.palette.mode);
+import { tokens } from "../Themes";
+import { useTheme } from "@mui/material";
 
-class Gauge extends Component {
-    render() {
-        
-      const data = [
-        {
+
+const Gauge = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const data = [
+    {
           type: 'indicator',
           mode: 'number+gauge+delta',
           title: {text: "Donation Goals"},
@@ -34,23 +32,22 @@ class Gauge extends Component {
       const layout = {
         width: 425,
         height: 300,
-        paper_bgcolor:"#1F2A40",
+        paper_bgcolor: colors.primary[400],
         font:{
             family: 'Source Sans 3, sans-serif',
             size: 12,
-            color: "#e0e0e0"
+            color: colors.primary[100]
           }, 
-          margin: { t: 50, r: 50, l: 50, b: 50 },
+        margin: { t: 50, r: 50, l: 50, b: 50 },
       };
   
       return (
+        
         <Plot
           data={data}
           layout={layout}
         />
       );
-    }
-  }
+    };
   
   export default Gauge;
-  

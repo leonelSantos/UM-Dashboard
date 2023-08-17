@@ -1,4 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { tokens } from "../Themes";
+import { useTheme } from "@mui/material";
 
 const data = [
     {
@@ -58,6 +60,9 @@ const data = [
 ];
 
 const StackedBar = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -77,8 +82,8 @@ const StackedBar = () => {
                 </pattern>
             </defs>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" stroke='#ffffff'/>
-          <YAxis stroke='#ffffff'/>
+          <XAxis dataKey="name" stroke={colors.primary[100]}/>
+          <YAxis stroke={colors.primary[100]}/>
           <Tooltip />
           <Legend />
           <Bar dataKey="KIN" stackId="a" fill="#ef8839" />
