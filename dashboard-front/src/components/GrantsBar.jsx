@@ -11,6 +11,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import { tokens } from "../Themes";
+import { useTheme } from "@mui/material";
 
 const data = [
     {
@@ -64,6 +66,8 @@ const data = [
   ];
 
   const GrantsBar = () => {
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
     return(
         <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
@@ -77,9 +81,9 @@ const data = [
             left: 20,
           }}
         >
-          <CartesianGrid stroke="#f5f5f5" />
-          <XAxis dataKey="name" scale="band" stroke='#ffffff' />
-          <YAxis stroke='#ffffff'/>
+          <CartesianGrid stroke={colors.grey[100]} />
+          <XAxis dataKey="name" scale="band" stroke= {colors.grey[100]} />
+          <YAxis stroke={colors.grey[100]}/>
           <Tooltip />
           <Legend />
           <Area type="monotone" dataKey="Peak" fill="#8884d8" stroke="#8884d8" />

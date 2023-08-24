@@ -12,6 +12,7 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import GroupsIcon from '@mui/icons-material/Groups';
 import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
+import SchoolIcon from '@mui/icons-material/School';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -128,12 +129,20 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Data
+              SEHD
             </Typography>
             <Item
               title="Donor Funding"
               to="/donorFunding"
               icon={<GroupsIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="Scholarships"
+              to="/scholarships"
+              icon={<SchoolIcon />}
               selected={selected}
               setSelected={setSelected}
             />

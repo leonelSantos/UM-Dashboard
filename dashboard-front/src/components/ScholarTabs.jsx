@@ -6,20 +6,13 @@ import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import DatasetIcon from '@mui/icons-material/Dataset';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import Header from "./Header";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import LineChart from "./LineChart";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockGrantsData } from "../data/grantsData";
-import StatBox from "../components/StatBox";
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import RedeemIcon from '@mui/icons-material/Redeem';
-import Gauge from "../components/Gauge";
 import { LinearProgress } from '@mui/material';
-import GrantsBar from "../components/GrantsBar";
-import Radial from './Radial';
+import CardGrid from './CardGrid';
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -54,9 +47,22 @@ return {
 };
 }
 
-const GrantsTabs = () => {
+const ScholarTabs = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
+    const cardData = [
+        { title: 'Dr. Barbara Marks Scholarship ', content: 'Content for Card 1', series: 75},
+        { title: 'Education Alumni Graduate Scholarships', content: 'Content for Card 2', series: 25},
+        { title: 'Michael B.salwen Endwd Gra-Student Scholarship', content: 'Content for Card 3', series: 55},
+        { title: 'J. Scott Watt Endowed Scholarship', content: 'Content for Card 4', series: 30},
+        { title: 'The Troob Family Endowed Student Support ', content: 'Content for Card 5', series: 27},
+        { title: 'Hilarie Bass Scholarship Fund  - not endowed', content: 'Content for Card 3', series: 56},
+        { title: 'Edward J. Pastroff Endowed Scholarship ', content: 'Content for Card 4', series: 80},
+        { title: 'Nancy G. Pastroff Endowed Graduate Scholarship ', content: 'Content for Card 5', series: 93},
+        // Add more card data
+      ];
+
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -211,157 +217,8 @@ const GrantsTabs = () => {
         </AppBar>
 
         <TabPanel value={value} index={0} dir={theme.direction}>
-        <Box
-        display="grid"
-        gridTemplateColumns="repeat(15, 1fr)"
-        gridAutoRows="140px"
-        gap="20px"
-        >
-            {/*ROW 1*/}
-            {/* Total Donated */}
-            <Box
-                gridColumn="span 5"
-                backgroundColor={colors.primary[400]}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                >
-                    <StatBox
-                    title="$5,361,450.00"
-                    subtitle="Total Donated 2023"
-                    progress="0.75"
-                    increase="54% Donation Goal"
-                    icon={
-                    <RedeemIcon
-                        sx={{ color:  "#a6c5e8", fontSize: "26px" }}
-                    />
-                    }
-                    />
-            </Box>
-            {/* Amount Available */}
-            <Box
-            gridColumn="span 5"
-            backgroundColor={colors.primary[400]}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            >
-            <StatBox
-                title="$1,431,225.00"
-                subtitle="Amount Still Available"
-                progress="0.50"
-                increase="21% Left"
-                icon={
-                <AccountBalanceWalletIcon
-                    sx={{ color:  "#a6c5e8", fontSize: "26px" }}
-                />
-                }
-            />
-            </Box>
-            {/* Total Donors */}
-            <Box
-            gridColumn="span 5"
-            backgroundColor={colors.primary[400]}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            >
-            <StatBox
-                title="357"
-                subtitle="Total Donors 2023"
-                progress="0.30"
-                increase="+5%"
-                icon={
-                <PersonAddIcon
-                    sx={{ color: "#a6c5e8", fontSize: "26px" }}
-                />
-                }
-            />
-            </Box>
-            {/* ROW 2 */}
-            <Box
-            gridColumn="span 9"
-            gridRow="span 2"
-            backgroundColor={colors.primary[400]}
-            >
-                {/* Line Graph */}
-                <Box
-                mt="10px"
-                p="0 30px"
-                display="flex "
-                justifyContent="space-between"
-                alignItems="center"
-                >
-                    {/* Line Graph Text*/}
-                    <Box>
-                        <Typography
-                        variant="h3"
-                        fontWeight="600"
-                        color={colors.grey[100]}
-                        >
-                            Total Grants Received
-                        </Typography>
-                        
-                        <Typography
-                        variant="h3"
-                        fontWeight="bold"
-                        color={colors.greenAccent[500]}
-                        >
-                        $50,450,342.32
-                        </Typography>
-                    </Box>
-                    {/* Line Graph Button*/}
-                    <Box>
-                        <IconButton>
-                            <DownloadOutlinedIcon
-                            sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                            />
-                        </IconButton>
-                    </Box>
-                </Box>
-
-                {/* Chart */}
-                <Box height="250px" m="-20px 0 0 0">
-                    <LineChart isDashboard={true} />
-                </Box>
-            </Box>
-
-            {/* Gauge Chart */}
-            <Box
-            gridColumn="span 6"
-            gridRow="span 2"
-            backgroundColor={colors.primary[400]}
-            display={'flex'}
-            justifyContent= {'center'}
-            alignItems= {'center'}
-            >
-                <Gauge initialWidth={450} initialHeight={300} GaugeTitle={"Number of Grants"}/>
-                {/*<Radial/>   */}
-            </Box>
-
-            {/* ROW 3 */}
-            {/* Grants Bar Chart */}
-            <Box
-            gridColumn="span 15"
-            gridRow="span 3"
-            backgroundColor={colors.primary[400]}>
-            <Box
-            mt="10px"
-            p="0 30px"
-            display="flex "
-            justifyContent="space-between"
-            alignItems="center">
-                <Typography
-                variant="h3"
-                fontWeight="600"
-                color={colors.grey[100]}
-                >
-                            Grants Over the Years
-                </Typography>
-            </Box>
-                {/*<GroupedBar/>*/}
-                <GrantsBar/>
-            </Box>
+        <Box>
+            <CardGrid cardData={cardData}/>
         </Box>
         </TabPanel>
 
@@ -419,4 +276,4 @@ const GrantsTabs = () => {
   );
 };
 
-export default GrantsTabs;
+export default ScholarTabs;

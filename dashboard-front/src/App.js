@@ -11,6 +11,7 @@ import FAQ from "./scenes/faq";
 import Calendar from "./scenes/calendar";
 import DonorFunding from "./scenes/donorFunding";
 import Grants from "./scenes/grants";
+import Scholarships from "./scenes/scholarships";
 
 function App() {
     const [theme, colorMode] = useMode();
@@ -28,6 +29,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/donorFunding" element={<DonorFunding />} />
+              <Route path="/scholarships" element={<Scholarships />} />
               <Route path="/grants" element={<Grants />} />
               <Route path="/form" element={<Form />} />
               <Route path="/faq" element={<FAQ />} />

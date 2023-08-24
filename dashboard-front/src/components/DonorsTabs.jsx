@@ -107,9 +107,9 @@ const DashTabs = () => {
     <Box 
     gridColumn="span 16"
     gridRow="span 1" 
-    sx={{ width: '100%', bgcolor: colors.primary[300] }}
+    sx={{ width: '100%', bgcolor: "#becdcf" }}
     >
-        <AppBar position="static" sx={{ backgroundColor: colors.primary[400] }}>
+        <AppBar position="static" sx={{ backgroundColor: "#3a6f88" }}>
             <Tabs 
             value={value} 
             onChange={handleChange} 
@@ -120,6 +120,7 @@ const DashTabs = () => {
             >
                 <Tab icon={<QueryStatsIcon/>} iconPosition="start" label="Analysis" {...a11yProps(0)}/>
                 <Tab icon={<DatasetIcon/>} iconPosition="start" label="Data" {...a11yProps(1)}/>
+                <Tab icon={<DatasetIcon/>} iconPosition="start" label="Scholarships" {...a11yProps(2)}/>
             </Tabs>
         </AppBar>
 
@@ -188,7 +189,7 @@ const DashTabs = () => {
                 justifyContent= {'center'}
                 alignItems= {'center'}
                 >
-                    <Gauge/>
+                    <Gauge initialWidth={450} initialHeight={300} GaugeTitle={"Donation Goals"}/>
                 </Box>
 
                 {/* Sunburst */}
@@ -200,6 +201,7 @@ const DashTabs = () => {
                 >
                     <Sunburst/>
                 </Box>
+                
 
                 {/* Grouped Bar Chart */}
                 <Box
@@ -278,6 +280,10 @@ const DashTabs = () => {
                 />
             </Box>
             </Box>
+        </TabPanel>
+
+        <TabPanel value={value} index={2} dir={theme.direction}>
+
         </TabPanel>
     </Box>
   );

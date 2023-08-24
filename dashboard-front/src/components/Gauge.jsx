@@ -1,16 +1,40 @@
+import React, { useRef, useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 import { tokens } from "../Themes";
 import { useTheme } from "@mui/material";
+import { Box } from '@mui/material';
 
 
-const Gauge = () => {
+
+const Gauge = ({ initialWidth, initialHeight, GaugeTitle }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const boxRef = useRef(null);
+  const [chartWidth, setChartWidth] = useState(initialWidth);
+  const [chartHeight, setChartHeight] = useState(initialHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (boxRef.current) {
+        const newWidth = boxRef.current.clientWidth;
+        const newHeight = boxRef.current.clientHeight;
+        setChartWidth(newWidth);
+        setChartHeight(newHeight);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const data = [
     {
           type: 'indicator',
           mode: 'number+gauge+delta',
-          title: {text: "Donation Goals"},
+          title: {text: GaugeTitle},
           value: 150, // Your indicator value
           delta: { reference: 120, increasing: { color: "#a6c5e8" } },
           position: 'center',
@@ -30,23 +54,27 @@ const Gauge = () => {
       ];
   
       const layout = {
-        width: 425,
-        height: 300,
+        width: chartWidth,
+        height: chartHeight,
+        autosize: true,
         paper_bgcolor: colors.primary[400],
         font:{
             family: 'Source Sans 3, sans-serif',
             size: 12,
             color: colors.primary[100]
           }, 
-        margin: { t: 50, r: 50, l: 50, b: 50 },
+        margin: { t: 70, r: 50, l: 50, b: 50 },
       };
   
       return (
-        
-        <Plot
-          data={data}
-          layout={layout}
-        />
+        <Box ref={boxRef} width="100%" height="100%">
+          <Plot
+            data={data}
+            layout={layout}
+            useResizeHandler={true}
+            //style={{width: '100%', height: '100%'}}
+          />
+        </Box>
       );
     };
   
