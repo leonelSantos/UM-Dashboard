@@ -51,7 +51,7 @@ const Sunburst = ({ initialWidth, initialHeight }) => {
         //width: chartWidth,
         //height: chartHeight,
         autosize: true,
-        paper_bgcolor:colors.primary[400],
+        paper_bgcolor:colors.greenAccent[800],
         sunburstcolorway:[
           "#ef8839","#266938","#a6c5e8"
         ],

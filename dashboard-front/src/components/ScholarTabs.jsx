@@ -52,14 +52,14 @@ const ScholarTabs = () => {
     const colors = tokens(theme.palette.mode);
 
     const cardData = [
-        { title: 'Dr. Barbara Marks Scholarship ', content: 'Content for Card 1', series: 75},
-        { title: 'Education Alumni Graduate Scholarships', content: 'Content for Card 2', series: 25},
-        { title: 'Michael B.salwen Endwd Gra-Student Scholarship', content: 'Content for Card 3', series: 55},
-        { title: 'J. Scott Watt Endowed Scholarship', content: 'Content for Card 4', series: 30},
+        { title: 'Dr. Barbara Marks', content: 'Content for Card 1', series: 75},
+        { title: 'Education Alumni Graduate', content: 'Content for Card 2', series: 25},
+        { title: 'Michael B.salwen Endwd Gra-Student', content: 'Content for Card 3', series: 55},
+        { title: 'J. Scott Watt Endowed', content: 'Content for Card 4', series: 30},
         { title: 'The Troob Family Endowed Student Support ', content: 'Content for Card 5', series: 27},
-        { title: 'Hilarie Bass Scholarship Fund  - not endowed', content: 'Content for Card 3', series: 56},
+        { title: 'Hilarie Bass Scholarship Fund', content: 'Content for Card 3', series: 56},
         { title: 'Edward J. Pastroff Endowed Scholarship ', content: 'Content for Card 4', series: 80},
-        { title: 'Nancy G. Pastroff Endowed Graduate Scholarship ', content: 'Content for Card 5', series: 93},
+        { title: 'Nancy G. Pastroff Endowed Graduate ', content: 'Content for Card 5', series: 93},
         // Add more card data
       ];
 
@@ -245,21 +245,21 @@ const ScholarTabs = () => {
                             color: colors.greenAccent[300],
                         },
                         "& .MuiDataGrid-columnHeaders": {
-                            backgroundColor: colors.blueAccent[700],
+                            backgroundColor: colors.greenAccent[800],
                             borderBottom: "none",
                         },
                         "& .MuiDataGrid-virtualScroller": {
-                            backgroundColor: colors.primary[400],
+                            backgroundColor: colors.greenAccent[900],
                         },
                         "& .MuiDataGrid-footerContainer": {
                             borderTop: "none",
-                            backgroundColor: colors.blueAccent[700],
+                            backgroundColor: colors.greenAccent[800],
                         },
                         "& .MuiCheckbox-root": {
-                            color: `${colors.greenAccent[200]} !important`,
+                            color: `${colors.greenAccent[100]} !important`,
                         },
                         "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                            color: `${colors.grey[100]} !important`,
+                            color: `${colors.grey[500]} !important`,
                         },
                         }}
                     >

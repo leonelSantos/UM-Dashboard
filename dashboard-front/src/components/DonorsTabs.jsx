@@ -107,9 +107,9 @@ const DashTabs = () => {
     <Box 
     gridColumn="span 16"
     gridRow="span 1" 
-    sx={{ width: '100%', bgcolor: "#becdcf" }}
+    sx={{ width: '100%', bgcolor: colors.greenAccent[200] }}
     >
-        <AppBar position="static" sx={{ backgroundColor: "#3a6f88" }}>
+        <AppBar position="static" sx={{ backgroundColor: colors.greenAccent[800] }}>
             <Tabs 
             value={value} 
             onChange={handleChange} 
@@ -120,7 +120,6 @@ const DashTabs = () => {
             >
                 <Tab icon={<QueryStatsIcon/>} iconPosition="start" label="Analysis" {...a11yProps(0)}/>
                 <Tab icon={<DatasetIcon/>} iconPosition="start" label="Data" {...a11yProps(1)}/>
-                <Tab icon={<DatasetIcon/>} iconPosition="start" label="Scholarships" {...a11yProps(2)}/>
             </Tabs>
         </AppBar>
 
@@ -136,7 +135,7 @@ const DashTabs = () => {
             <Box
             gridColumn="span 8"
             gridRow="span 2"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.greenAccent[800]}
             >
                 {/* Line Graph */}
                 <Box
@@ -184,7 +183,7 @@ const DashTabs = () => {
                 <Box
                 gridColumn="span 7"
                 gridRow="span 2"
-                backgroundColor={colors.primary[400]}
+                backgroundColor={colors.greenAccent[800]}
                 display={'flex'}
                 justifyContent= {'center'}
                 alignItems= {'center'}
@@ -196,7 +195,7 @@ const DashTabs = () => {
                 <Box
                 gridColumn="span 6"
                 gridRow="span 4"
-                backgroundColor={colors.primary[400]}
+                backgroundColor={colors.greenAccent[800]}
                 display={'flex'}
                 >
                     <Sunburst/>
@@ -207,7 +206,7 @@ const DashTabs = () => {
                 <Box
                 gridColumn="span 9"
                 gridRow="span 4"
-                backgroundColor={colors.primary[400]}
+                backgroundColor={colors.greenAccent[800]}
                 >
                     <Box
                     mt="10px"
@@ -280,10 +279,6 @@ const DashTabs = () => {
                 />
             </Box>
             </Box>
-        </TabPanel>
-
-        <TabPanel value={value} index={2} dir={theme.direction}>
-
         </TabPanel>
     </Box>
   );

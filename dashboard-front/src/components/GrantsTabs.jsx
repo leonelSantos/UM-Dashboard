@@ -221,7 +221,7 @@ const GrantsTabs = () => {
             {/* Total Donated */}
             <Box
                 gridColumn="span 5"
-                backgroundColor={colors.primary[400]}
+                backgroundColor={colors.greenAccent[800]}
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
@@ -241,7 +241,7 @@ const GrantsTabs = () => {
             {/* Amount Available */}
             <Box
             gridColumn="span 5"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.greenAccent[800]}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -261,7 +261,7 @@ const GrantsTabs = () => {
             {/* Total Donors */}
             <Box
             gridColumn="span 5"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.greenAccent[800]}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -282,7 +282,7 @@ const GrantsTabs = () => {
             <Box
             gridColumn="span 9"
             gridRow="span 2"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.greenAccent[800]}
             >
                 {/* Line Graph */}
                 <Box
@@ -330,7 +330,7 @@ const GrantsTabs = () => {
             <Box
             gridColumn="span 6"
             gridRow="span 2"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.greenAccent[800]}
             display={'flex'}
             justifyContent= {'center'}
             alignItems= {'center'}
@@ -344,7 +344,7 @@ const GrantsTabs = () => {
             <Box
             gridColumn="span 15"
             gridRow="span 3"
-            backgroundColor={colors.primary[400]}>
+            backgroundColor={colors.greenAccent[800]}>
             <Box
             mt="10px"
             p="0 30px"

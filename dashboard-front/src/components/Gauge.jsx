@@ -57,7 +57,7 @@ const Gauge = ({ initialWidth, initialHeight, GaugeTitle }) => {
         width: chartWidth,
         height: chartHeight,
         autosize: true,
-        paper_bgcolor: colors.primary[400],
+        paper_bgcolor: colors.greenAccent[800],
         font:{
             family: 'Source Sans 3, sans-serif',
             size: 12,

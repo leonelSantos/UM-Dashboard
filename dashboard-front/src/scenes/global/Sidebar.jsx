@@ -43,7 +43,7 @@ const Sidebar = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
+          background: `${colors.greenAccent[800]} !important`,
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -52,10 +52,10 @@ const Sidebar = () => {
           padding: "5px 35px 5px 20px !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
+          color: "#ffcb94 !important",
         },
         "& .pro-menu-item.active": {
-          color: "#6870fa !important",
+          color: "#ff931f !important",
         },
       }}
     >
