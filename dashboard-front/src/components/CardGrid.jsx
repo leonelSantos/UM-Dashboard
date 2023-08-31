@@ -13,10 +13,10 @@ const CardGrid = ({ cardData }) => {
       <Grid container spacing={2}>
         {cardData.map((card, index) => (
           <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-            <Card sx={{ backgroundColor: '#599b77', color: colors.primary[400] }}>
+            <Card sx={{ backgroundColor: '#87ba9e', color: colors.primary[400] }}>
               <CardContent>
                 <Typography variant="h4" sx={{ textAlign: 'center' }}>{card.title} </Typography>
-                <Radial series={card.series}/>
+                <Radial series={card.series} label={card.label}/>
                 <Typography>{card.content}</Typography>
               </CardContent>
             </Card>

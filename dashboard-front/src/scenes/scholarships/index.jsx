@@ -9,7 +9,7 @@ const Scholarships = () => {
     return(
         <Box m="20px">
             <Box>
-                <Header title="Scholarships" subtitle="Welcome to the Scholarships Page" />
+                <Header title="SCHOLARSHIPS" subtitle="Welcome to the Scholarships Page" />
             </Box>
             {/* Tabs */}
             <ScholarTabs/>

@@ -52,14 +52,14 @@ const ScholarTabs = () => {
     const colors = tokens(theme.palette.mode);
 
     const cardData = [
-        { title: 'Dr. Barbara Marks', content: 'Content for Card 1', series: 75},
-        { title: 'Education Alumni Graduate', content: 'Content for Card 2', series: 25},
-        { title: 'Michael B.salwen Endwd Gra-Student', content: 'Content for Card 3', series: 55},
-        { title: 'J. Scott Watt Endowed', content: 'Content for Card 4', series: 30},
-        { title: 'The Troob Family Endowed Student Support ', content: 'Content for Card 5', series: 27},
-        { title: 'Hilarie Bass Scholarship Fund', content: 'Content for Card 3', series: 56},
-        { title: 'Edward J. Pastroff Endowed Scholarship ', content: 'Content for Card 4', series: 80},
-        { title: 'Nancy G. Pastroff Endowed Graduate ', content: 'Content for Card 5', series: 93},
+        { title: 'Dr. Barbara Marks', content: 'Content for Card 1', series: 75, label: '$112,500 / $450,000'},
+        { title: 'Education Alumni Graduate', content: 'Content for Card 2', series: 25, label: '$187,500 / $250,000'},
+        { title: 'Michael B.salwen Endwd Gra-Student', content: 'Content for Card 3', series: 55, label: '$67,500 / $150,000'},
+        { title: 'J. Scott Watt Endowed', content: 'Content for Card 4', series: 30, label: '$70,000 / $100,000'},
+        { title: 'The Troob Family Endowed', content: 'Content for Card 5', series: 27, label: '$58,400 / $80,000'},
+        { title: 'Hilarie Bass Scholarship Fund', content: 'Content for Card 3', series: 56, label: '$308,000 / $700,000'},
+        { title: 'Edward J. Pastroff Endowed', content: 'Content for Card 4', series: 80, label: '$7,000 / $35,000'},
+        { title: 'Nancy G. Pastroff Endowed', content: 'Content for Card 5', series: 93, label: '$4,410 / $63,000'},
         // Add more card data
       ];
 

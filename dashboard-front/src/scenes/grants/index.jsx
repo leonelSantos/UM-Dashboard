@@ -11,7 +11,7 @@ const Grants = () => {
     return(
         <Box m="20px">
             <Box>
-                <Header title="Grants" subtitle="Welcome to the Grants Page" />
+                <Header title="GRANTS" subtitle="Welcome to the Grants Page" />
             </Box>
             {/* Tabs */}
             <GrantsTabs/>

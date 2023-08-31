@@ -11,7 +11,7 @@ const Header = ({ title, subtitle }) => {
       <Typography
         variant="h2"
         align="center"
-        color={colors.primary[300]}
+        color={colors.orangeAccent[100]}
         fontWeight="bold"
         sx={{ m: "0 0 5px 0" }}
       >

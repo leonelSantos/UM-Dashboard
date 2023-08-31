@@ -39,7 +39,7 @@ export const tokens = (mode) => ({
           900: "#0f2922",
         },
         orangeAccent: {
-          100:"#F6B031",
+          100:"#ff931f",
         },
         redAccent: {
           100: "#f8dcdb",
@@ -100,7 +100,7 @@ export const tokens = (mode) => ({
           900: "#dbf5ee",
         },
         orangeAccent: {
-          100:"#F6B031",
+          100:"#ff931f",
         },
         redAccent: {
           100: "#2c100f",
@@ -168,7 +168,7 @@ export const themeSettings = (mode) => {
               light: colors.grey[100],
             },
             background: {
-              default: "#fcfcfc",
+              default: colors.greenAccent[900],
             },
             icons: {
               default: colors.orangeAccent[100],

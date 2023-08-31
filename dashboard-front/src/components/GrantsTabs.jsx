@@ -20,6 +20,7 @@ import Gauge from "../components/Gauge";
 import { LinearProgress } from '@mui/material';
 import GrantsBar from "../components/GrantsBar";
 import Radial from './Radial';
+import HalfRadial from './HalfRadial';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -280,7 +281,7 @@ const GrantsTabs = () => {
             </Box>
             {/* ROW 2 */}
             <Box
-            gridColumn="span 9"
+            gridColumn="span 8"
             gridRow="span 2"
             backgroundColor={colors.greenAccent[800]}
             >
@@ -328,15 +329,15 @@ const GrantsTabs = () => {
 
             {/* Gauge Chart */}
             <Box
-            gridColumn="span 6"
+            gridColumn="span 7"
             gridRow="span 2"
             backgroundColor={colors.greenAccent[800]}
             display={'flex'}
             justifyContent= {'center'}
             alignItems= {'center'}
             >
-                <Gauge initialWidth={450} initialHeight={300} GaugeTitle={"Number of Grants"}/>
-                {/*<Radial/>   */}
+                {/*<Gauge initialWidth={450} initialHeight={300} GaugeTitle={"Number of Grants"}/>*/}
+                <HalfRadial/>
             </Box>
 
             {/* ROW 3 */}
@@ -388,21 +389,21 @@ const GrantsTabs = () => {
                             color: colors.greenAccent[300],
                         },
                         "& .MuiDataGrid-columnHeaders": {
-                            backgroundColor: colors.blueAccent[700],
+                            backgroundColor: colors.greenAccent[800],
                             borderBottom: "none",
                         },
                         "& .MuiDataGrid-virtualScroller": {
-                            backgroundColor: colors.primary[400],
+                            backgroundColor: colors.greenAccent[900],
                         },
                         "& .MuiDataGrid-footerContainer": {
                             borderTop: "none",
-                            backgroundColor: colors.blueAccent[700],
+                            backgroundColor: colors.greenAccent[800],
                         },
                         "& .MuiCheckbox-root": {
                             color: `${colors.greenAccent[200]} !important`,
                         },
                         "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                            color: `${colors.grey[100]} !important`,
+                            color: `${colors.grey[500]} !important`,
                         },
                         }}
                     >

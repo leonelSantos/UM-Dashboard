@@ -17,6 +17,7 @@ import { mockDataDonors } from "../data/donorData";
 import Gauge from "./Gauge";
 import Sunburst from "./Sunburst";
 import StackedBar from "./StackedBar";
+import HalfRadial from './HalfRadial';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -188,7 +189,8 @@ const DashTabs = () => {
                 justifyContent= {'center'}
                 alignItems= {'center'}
                 >
-                    <Gauge initialWidth={450} initialHeight={300} GaugeTitle={"Donation Goals"}/>
+                    {/*<Gauge initialWidth={450} initialHeight={300} GaugeTitle={"Donation Goals"}/>*/}
+                    <HalfRadial/>
                 </Box>
 
                 {/* Sunburst */}
@@ -253,21 +255,21 @@ const DashTabs = () => {
                 color: colors.greenAccent[300],
             },
             "& .MuiDataGrid-columnHeaders": {
-                backgroundColor: colors.blueAccent[700],
+                backgroundColor: colors.greenAccent[800],
                 borderBottom: "none",
             },
             "& .MuiDataGrid-virtualScroller": {
-                backgroundColor: colors.primary[400],
+                backgroundColor: colors.greenAccent[900],
             },
             "& .MuiDataGrid-footerContainer": {
                 borderTop: "none",
-                backgroundColor: colors.blueAccent[700],
+                backgroundColor: colors.greenAccent[800],
             },
             "& .MuiCheckbox-root": {
                 color: `${colors.greenAccent[200]} !important`,
             },
             "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                color: `${colors.grey[100]} !important`,
+                color: `${colors.grey[500]} !important`,
             },
             }}
             >

@@ -1,6 +1,6 @@
 import Chart from "react-apexcharts";
 
-const Radial = ({series}) => {
+const Radial = ({series, label}) => {
 
     const settings = {
         series: [series],
@@ -33,7 +33,7 @@ const Radial = ({series}) => {
                 }
               },
               track: {
-                background: '#cdead0',
+                background: '#4cf701',
                 strokeWidth: '67%',
                 margin: 0, // margin is in pixels
                 dropShadow: {
@@ -41,7 +41,7 @@ const Radial = ({series}) => {
                   top: -3,
                   left: 0,
                   blur: 4,
-                  opacity: 0.35
+                  opacity: 0.7
                 }
               },
           
@@ -55,7 +55,7 @@ const Radial = ({series}) => {
                 },
                 value: {
                   formatter: function(val) {
-                    return parseInt(val);
+                    return val + "%";
                   },
                   color: '#111',
                   fontSize: '36px',
@@ -66,21 +66,22 @@ const Radial = ({series}) => {
           },
           fill: {
             type: 'gradient',
+            colors: ['#eb9160'],
             gradient: {
               shade: 'dark',
               type: 'horizontal',
               shadeIntensity: 0.5,
-              gradientToColors: ['#ABE5A1'],
-              inverseColors: true,
+              gradientToColors: ['#e15441'],
+              inverseColors: false,
               opacityFrom: 1,
               opacityTo: 1,
-              stops: [0, 100]
+              stops: [0, 200]
             }
           },
           stroke: {
             lineCap: 'round'
           },
-          labels: ['Percent'],
+          labels: [label],
         },
       };
     
